@@ -12,9 +12,15 @@ def model_prediction(test_image):
     result_index = np.argmax(prediction)
     return result_index
 
+
+def klik_github():
+    st.link_button
+
 #Sidebar
 st.sidebar.title("Dashboard")
-app_mode = st.sidebar.selectbox("Select Page",["Home","About","Disease Recognition"])
+app_mode = st.sidebar.selectbox("Select Page",["Home","About","Disease Recognition", "Me"])
+st.sidebar.markdown('[![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=flat&logo=GitHub)](https://github.com/AryaWiratama26/Plant-Disease-Detection)')
+    
 
 #Home Page
 if(app_mode=="Home"):
@@ -42,6 +48,7 @@ if(app_mode=="Home"):
     ### About Us
     Learn more about the project, our team, and our goals on the **About** page.
 """)
+    
 
 #About Page
 elif(app_mode=="About"):
@@ -106,3 +113,13 @@ elif(app_mode=="Disease Recognition"):
     'Tomato___Tomato_mosaic_virus',
     'Tomato___healthy']
         st.success("Model is Predicting it's a {}".format(class_name[result_index]))
+
+elif(app_mode=="Me"):
+    st.header("Hello it's me")
+    st.markdown("""
+    Perkenalkan nama saya adalah `Arya Wiratama`, dari kelas TI.23.A2 dengan NIM 312310224. Ini merupakan project
+    `Plant Disease Detection` untuk mata Kuliah `Pengolahan Citra`.
+                
+    Untuk dataset bisa di dapatkan melalui [kaggle](https://www.kaggle.com/datasets/vipoooool/new-plant-diseases-dataset)
+    """)
+
